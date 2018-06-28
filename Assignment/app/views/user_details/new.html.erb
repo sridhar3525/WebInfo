@@ -1,0 +1,65 @@
+<html>
+<head>
+  <title>New User Registration</title>
+</head>
+<%= stylesheet_link_tag "/HomeCSS/bootstrap.css" %>
+<%= stylesheet_link_tag "/home.css" %>
+<style>
+  body{
+    margin: 0px;
+  }
+  .banner-area {
+    background: url(<%= asset_path 'bgImg/bluebg.jpg' %>) no-repeat center center/cover;
+  }
+  .relative{
+    position: relative;
+  }
+  .banner-area .overlay-bg {
+    opacity: 0.3;
+    background-color: #7f3f3b;
+
+  }
+  .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+    label{
+      font-size: 24px;
+    }
+</style>
+<script>
+
+</script>
+<body>
+<h1>New User Registration</h1>
+<div class="cover_item"_>
+  <section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+      <div class="row fullscreen align-items-center justify-content-center" style="height: 915px;">
+        <div class="banner-content col-lg-10 col-md-12" style="color: floralwhite">
+
+          <%= render 'form', user_detail: @user_detail %>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+<!--<h1>New User Detail</h1>-->
+
+<%#= render 'form', user_detail: @user_detail %>
+
+<%#= link_to 'Back', user_details_path %>

@@ -1,0 +1,39 @@
+.container#mainHead {
+    background-color: steelblue;
+    margin: 0px;
+    width: 100%;
+    max-width: 100%;
+    color: floralwhite;
+}
+
+a.nav-link {
+    color: black;
+    font-size: 20px;
+    text-decoration: solid;
+    text-decoration-style: solid;
+}
+
+#eventsTable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#eventsTable td, #customers th {
+    border: 1px solid #ddd;
+    padding: 10px;
+    align-content: center;
+}
+
+#eventsTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#eventsTable tr:hover {background-color: #ddd;}
+
+#eventsTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    background-color: darkblue;
+    color: white;
+}

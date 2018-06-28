@@ -1,0 +1,74 @@
+<html>
+<head>
+  <title></title>
+  <%= stylesheet_link_tag "/HomeCSS/bootstrap.css" %>
+  <link rel="stylesheet" href="HomeCSS/bootstrap.css">
+  <style>
+    a#home{
+      background-color: deepskyblue;
+      color:darkblue;
+    }
+    .banner-area {
+      background: url(<%= asset_path 'bgImg/bluebg.jpg' %>) no-repeat center center/cover;
+    }
+    .relative{
+      position: relative;
+    }
+    .banner-area .overlay-bg {
+      opacity: .3;
+      background-color: #7f3f3b;
+
+    }
+    .overlay {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+      body{
+        font-size: 14px;
+        font-weight: 300;
+      }
+
+  </style>
+</head>
+<body>
+<div class="container" id="mainHead" style="background-image: url(<%= asset_path 'bgImg/bluebg.jpg' %>)" >
+  <div class="row">
+    <div class="col-sm-7" id="title_page"> <h1>My Home Page</h1></div>
+    <div class="col-sm-5">  <%= render 'mainheader' %> </div>
+  </div>
+</div>
+<%#= render 'mainheader' %>
+<%= render 'header' %>
+
+  <!-- start banner Area -->
+  <section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+      <div class="row fullscreen align-items-center justify-content-center" style="height: 915px;">
+        <div class="banner-content col-lg-6 col-md-12" style="color: floralwhite">
+          <h1>
+            Welcome to world's biggest EventsMashup!
+          </h1>
+          <div class="row clock_sec d-flex flex-row justify-content-between" id="clockdiv">
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End banner Area -->
+
+<%= render 'footer' %>
+
+</body>
+<style>
+  .nav>li>a:hover, .nav>li>a:focus {
+    text-decoration: none;
+    background-color: deepskyblue;
+  }
+</style>
+</html>

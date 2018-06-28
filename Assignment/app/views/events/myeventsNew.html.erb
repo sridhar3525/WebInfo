@@ -1,0 +1,144 @@
+<html>
+<head>
+  <title></title>
+  <%= stylesheet_link_tag "/HomeCSS/bootstrap.css" %>
+  <%= stylesheet_link_tag "/home.css" %>
+  <style>
+    a#myevents{
+      background-color: deepskyblue;
+      color:darkblue;
+    }
+
+    #midDiv{
+      left: 0px;
+      float: left;
+      position: absolute;
+      height: auto;
+    }
+
+    #button_create,#button_view{
+      padding:10px 10px 10px 10px;
+    }
+
+    .container#mainHead {
+      background-color: steelblue;
+      margin: 0px;
+      width: 100%;
+      max-width: 100%;
+      color: floralwhite;
+    }
+    html, body {
+      height: 100%;
+    }
+    .wrapper {
+      min-height: 100%;
+      height: 100%;
+      margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+    }
+    .footer, .push {
+      height: 155px; /* .push must be the same height as .footer */
+    }
+  </style>
+  <script>
+
+
+
+  </script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="container" id="mainHead" >
+    <div class="row">
+      <div class="col-sm-7" id="title_page"> <h1>My Events Page</h1></div>
+      <div class="col-sm-5">  <%= render 'mainheader' %> </div>
+    </div>
+  </div>
+  <%= render 'header' %>
+  <div class="container" id="midDiv">
+    <div class="row">
+      <div class="col-sm-2" style="background-image:url(<%= asset_path 'bgImg/background3.jpg' %>);height: 100vh">
+        <div class="overlay" style="align-content: center">
+          <div style="padding-top: 100px">
+            <%= link_to button_tag("Create New Event", class: "btn btn-primary", id: "button_create" ),'/events/myeventsNew/1' %>
+            <br>
+            <br>
+            <%= link_to button_tag("View My Events", class: "btn btn-primary", id: "button_view"),'/events/myeventsView/1' %>
+          </div>
+        </div>
+      </div>
+<!--      <div class="col-sm-8" id="modDiv1">-->
+<!--        <div class="">-->
+<!--          <h1>Welcome to Events Section</h1>-->
+<!--          <h3>Upcoming Events</h3>-->
+<!--          <p></p>-->
+
+<!--        </div>-->
+<!--      </div>-->
+      <div class="col-sm-8" id="modDiv2">
+        <div class="">
+          <h1>Welcome to Events Creation Section</h1>
+          <h3>Create your own events</h3>
+          <h1>New Event</h1>
+
+          <%= render 'events/form', event: @event %>
+
+          <%#= link_to 'Back', events_path %>
+
+        </div>
+      </div>
+<!--      <div class="col-sm-8" id="modDiv3">-->
+<!--        <div class="">-->
+<!--          <h1>Welcome to Events Section</h1>-->
+<!--          <h3>Upcoming Events Mod3</h3>-->
+<!--          <p id="notice"><%#= notice %></p>-->
+
+<!--          <h1>Events</h1>-->
+
+<!--          <table>-->
+<!--            <thead>-->
+<!--            <tr>-->
+<!--              <th>Eventname</th>-->
+<!--              <th>Eventdate</th>-->
+<!--              <th>Eventlocation</th>-->
+<!--              <th>Eventaddress</th>-->
+<!--              <th>Eventdescription</th>-->
+<!--              <th colspan="3"></th>-->
+<!--            </tr>-->
+<!--            </thead>-->
+
+<!--            <tbody>-->
+            <%# if @events != nil %>
+              <%# @events.each do |event| %>
+<!--                <tr>-->
+<!--                  <td><%#= event.EventName %></td>-->
+<!--                  <td><%#= event.EventDate %></td>-->
+<!--                  <td><%#= event.EventLocation %></td>-->
+<!--                  <td><%#= event.EventAddress %></td>-->
+<!--                  <td><%#= event.EventDescription %></td>-->
+<!--                  <td><%#= link_to 'Show', event %></td>-->
+<!--                  <td><%#= link_to 'Edit', edit_event_path(event) %></td>-->
+<!--                  <td><%#= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+<!--                </tr>-->
+              <%# end %>
+            <%# end %>
+<!--            </tbody>-->
+<!--          </table>-->
+
+<!--          <br>-->
+
+          <%#= link_to 'New Event', new_event_path %>
+
+<!--        </div>-->
+<!--      </div>-->
+
+    </div>
+  </div>
+</div>
+<div class="push">
+
+</div>
+</body>
+
+
+<%= render 'footer' %>
+</html>

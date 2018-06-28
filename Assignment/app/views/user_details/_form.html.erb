@@ -1,0 +1,135 @@
+<style>
+  .formElement{
+    margin: 10px;
+    padding: 10px;
+  }
+
+</style>
+
+<%= form_with(model: user_detail, local: true) do |form| %>
+  <% if user_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user_detail.errors.count, "error") %> prohibited this user_detail from being saved:</h2>
+
+      <ul>
+        <% user_detail.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-row">
+  <div class="form-group col-md-4 formElement">
+    <%= form.label :username %>
+    <%= form.text_field :username, id: :user_detail_username, class: 'form-control' %>
+  </div>
+    <div class="form-group col-md-4 formElement">
+      <%= form.label :password %>
+      <%= form.password_field :password, id: :user_detail_password, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4 formElement ">
+      <%= form.label :emailAddress %>
+      <%= form.email_field :emailAddress, id: :user_detail_emailAddress, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-row">
+  <div class="form-group col-md-4 formElement">
+    <%= form.label :firstname %>
+    <%= form.text_field :firstname, id: :user_detail_firstname, class: 'form-control' %>
+  </div>
+
+  <div class="form-group col-md-4 formElement">
+    <%= form.label :middlename %>
+    <%= form.text_field :middlename, id: :user_detail_middlename, class: 'form-control' %>
+  </div>
+  </div>
+  <div class="form-row">
+  <div class="form-group col-md-4 formElement">
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname, id: :user_detail_lastname, class: 'form-control' %>
+  </div>
+  </div>
+
+
+  <div class="form-row">
+  <div class="form-group col-md-4 formElement">
+    <%= form.label :phoneno %>
+    <%= form.text_field :phoneno, id: :user_detail_phoneno, class: 'form-control' %>
+  </div>
+
+  <div class="form-group col-md-4 formElement">
+    <%= form.label :dateOfBirth %>
+    <%= form.date_field :dateOfBirth, id: :user_detail_dateOfBirth, class: 'form-control' %>
+  </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+
+    <%= form.submit :'Create User', class: :"btn btn-primary formElement"  %>
+    <%= link_to '<input type="button" value="Cancel" class="btn btn-primary formElement">'.html_safe,'/'  %>
+    </div>
+  </div>
+<% end %>
+
+
+<%#= form_with(model: user_detail, local: true) do |form| %>
+  <%# if user_detail.errors.any? %>
+<!--    <div id="error_explanation">-->
+<!--      <h2><%#= pluralize(user_detail.errors.count, "error") %> prohibited this user_detail from being saved:</h2>-->
+
+<!--      <ul>-->
+        <%# user_detail.errors.full_messages.each do |message| %>
+<!--          <li><%#= message %></li>-->
+        <%# end %>
+<!--      </ul>-->
+<!--    </div>-->
+  <%# end %>
+
+<!--  <div class="field">-->
+    <%#= form.label :username %>
+    <%#= form.text_field :username, id: :user_detail_username %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label :firstname %>
+    <%#= form.text_field :firstname, id: :user_detail_firstname %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label :middlename %>
+    <%#= form.text_field :middlename, id: :user_detail_middlename %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label :lastname %>
+    <%#= form.text_field :lastname, id: :user_detail_lastname %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label :emailAddress %>
+    <%#= form.email_field :emailAddress, id: :user_detail_emailAddress %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label :password %>
+    <%#= form.password_field :password, id: :user_detail_password %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label :phoneno %>
+    <%#= form.text_field :phoneno, id: :user_detail_phoneno %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label :dateOfBirth %>
+    <%#= form.date_field :dateOfBirth, id: :user_detail_dateOfBirth %>
+<!--  </div>-->
+
+<!--  <div class="actions">-->
+    <%#= form.submit %>
+<!--  </div>-->
+<%# end %>

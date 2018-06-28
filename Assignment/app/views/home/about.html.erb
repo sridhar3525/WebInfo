@@ -1,0 +1,127 @@
+<html>
+<head>
+  <title></title>
+  <%= stylesheet_link_tag "/HomeCSS/bootstrap.css" %>
+  <style>
+    a#about{
+      background-color: deepskyblue;
+      color:darkblue;
+    }
+
+    #midDiv{
+      left: 0px;
+      float: left;
+      position: absolute;
+      height: auto;
+    }
+
+    .container#mainHead {
+      background-color: steelblue;
+      margin: 0px;
+      width: 100%;
+      max-width: 100%;
+      color: floralwhite;
+    }
+
+      .container{
+        overflow: hidden;
+      }
+      /*.column1, .column2{*/
+        /*float: left;*/
+        /*padding-bottom: 100%;*/
+        /*margin-bottom: -100%;*/
+        /**/
+      /*}*/
+
+      .column1{
+        background-color: darkblue;
+        height: 100vh;
+      }
+
+      .column2{
+        height: 100vh;
+      }
+  </style>
+</head>
+<body>
+<div class="container" id="mainHead" >
+  <div class="row">
+    <div class="col-sm-7" id="title_page"> <h1>My Personal Profile</h1></div>
+    <div class="col-sm-5">  <%= render 'mainheader' %> </div>
+  </div>
+</div>
+<%= render 'header' %>
+<div class="container" id="midDiv">
+  <div class="row">
+    <div class="col-sm-2 column1" >
+      <div class="overlay" style="align-content: center">
+        <div style="padding-top: 100px">
+          <br>
+          <br>
+          <br>
+          <br>
+
+        </div>
+      </div>
+    </div>
+    <style>
+      div#modDiv1 p{
+            font-size: 20px;
+            padding: 8px;
+      }
+    </style>
+    <div class="col-sm-8 column2" id="modDiv1" style="font-size: 15px">
+      <div class="">
+        <h3>Personal Information</h3>
+        <p>
+          <strong>Username:</strong>
+          <%= @user_detail.username %>
+        </p>
+
+        <p>
+          <strong>Firstname:</strong>
+          <%= @user_detail.firstname %>
+        </p>
+
+        <p>
+          <strong>Middlename:</strong>
+          <%= @user_detail.middlename %>
+        </p>
+
+        <p>
+          <strong>Lastname:</strong>
+          <%= @user_detail.lastname %>
+        </p>
+
+        <p>
+          <strong>Emailaddress:</strong>
+          <%= @user_detail.emailAddress %>
+        </p>
+
+        <p>
+          <strong>Password:</strong>
+          <%= @user_detail.password %>
+        </p>
+
+        <p>
+          <strong>Phoneno:</strong>
+          <%= @user_detail.phoneno %>
+        </p>
+
+        <p>
+          <strong>Dateofbirth:</strong>
+          <%= @user_detail.dateOfBirth %>
+        </p>
+
+        <%= link_to 'Edit', edit_user_detail_path(@user_detail) %> |
+        <%#= link_to 'Back', user_details_path %>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<%= render 'footer' %>
+
+</body>
+</html>

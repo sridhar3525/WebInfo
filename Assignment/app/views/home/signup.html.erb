@@ -1,0 +1,91 @@
+<html>
+<head>
+  <title>Signup Page</title>
+</head>
+<style>
+  body{
+    margin: 0px;
+  }
+  .banner-area {
+    background: url(<%= asset_path 'bgImg/slider.png' %>) no-repeat center center/cover;
+  }
+  .relative{
+    position: relative;
+  }
+  .banner-area .overlay-bg {
+    opacity: 0.3;
+    background-color: #7f3f3b;
+
+  }
+  .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+</style>
+<script>
+
+</script>
+<body>
+    <h1>Signup Page</h1>
+    <div class="cover_item"_>
+      <section class="banner-area relative" id="home">
+        <div class="overlay overlay-bg"></div>
+        <div class="container">
+          <div class="row fullscreen align-items-center justify-content-center" style="height: 915px;">
+            <div class="banner-content col-lg-10 col-md-12" style="color: floralwhite">
+
+              <%= form_tag "/home/register", method: 'POST' do%>
+                <div class = "fields">
+                  <table>
+                    <tr>
+                      <td>Username</td>
+                      <td><%= text_field_tag(name ="username") %></td>
+                    </tr>
+                    <tr>
+                      <td>EmailAddress</td>
+                      <td><%= email_field_tag(name ="emailAddress") %></td>
+                    </tr>
+                    <tr>
+                      <td>Password</td>
+                      <td><%= password_field_tag(name="password") %></td>
+                    </tr>
+                    <tr>
+                      <td><%= submit_tag("SignUp")  %></td>
+                      <td><%= button_tag(value="Cancel") %></td>
+                    </tr>
+                  </table>
+                </div>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <%#= form_tag "/home/register", method: 'POST' do%>
+<!--  <div class = "fields">-->
+<!--    <table>-->
+<!--      <tr>-->
+<!--        <td>Username</td>-->
+<!--        <td><%#= text_field_tag(name ="username") %></td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td>EmailAddress</td>-->
+<!--        <td><%#= email_field_tag(name ="emailAddress") %></td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td>Password</td>-->
+<!--        <td><%#= password_field_tag(name="password") %></td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td><%#= submit_tag("SignUp")  %></td>-->
+<!--        <td><%#= button_tag(value="Cancel") %></td>-->
+<!--      </tr>-->
+<!--    </table>-->
+<!--  </div>-->
+<%# end %>
+</body>
+</html>

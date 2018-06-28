@@ -1,0 +1,121 @@
+<html>
+<head>
+  <title></title>
+  <%= stylesheet_link_tag "/HomeCSS/bootstrap.css" %>
+  <%= stylesheet_link_tag "/home.css" %>
+  <style>
+    a#myevents{
+      background-color: deepskyblue;
+      color:darkblue;
+    }
+
+    #midDiv{
+      left: 0px;
+      float: left;
+      position: absolute;
+      height: auto;
+    }
+
+    #button_create,#button_view{
+      padding:10px 10px 10px 10px;
+    }
+
+    .container#mainHead {
+      background-color: steelblue;
+      margin: 0px;
+      width: 100%;
+      max-width: 100%;
+      color: floralwhite;
+    }
+    html, body {
+      height: 100%;
+    }
+    .wrapper {
+      min-height: 100%;
+      height: 100%;
+      margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+    }
+    .footer, .push {
+      height: 155px; /* .push must be the same height as .footer */
+    }
+  </style>
+  <script>
+
+      // $(document).ready(function () {
+      //     $('#modDiv2').hide();
+      //     $('#modDiv3').hide();
+      //
+      //     $("#button_create").click(function() {
+      //         // assumes element with id='button'
+      //         //$("#newpost").toggle();
+      //
+      //         //alert('toggle function called');
+      //         console.log('toggle function')
+      //         $('#modDiv1').hide();
+      //         $('#modDiv2').show();
+      //         $('#modDiv3').hide();
+      //         return false;
+      //     });
+      //
+      //     $("#button_view").click(function() {
+      //         // assumes element with id='button'
+      //         //$("#newpost").toggle();
+      //
+      //         //alert('toggle function called');
+      //         console.log('toggle function')
+      //         $('#modDiv1').hide();
+      //         $('#modDiv2').hide();
+      //         $('#modDiv3').show();
+      //         return false;
+      //     });
+      // });
+
+  </script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="container" id="mainHead" >
+    <div class="row">
+      <div class="col-sm-7" id="title_page"> <h1>My Events Page</h1></div>
+      <div class="col-sm-5">  <%= render 'mainheader' %> </div>
+    </div>
+  </div>
+  <%= render 'header' %>
+  <div class="container" id="midDiv">
+    <div class="row">
+      <div class="col-sm-2" style="background-image:url(<%= asset_path 'bgImg/background3.jpg' %>);height: 100vh">
+        <div class="overlay" style="align-content: center">
+          <div style="padding-top: 100px">
+            <%= link_to button_tag("Create New Event", class: "btn btn-primary", id: "button_create" ),'/events/myeventsNew/1' %>
+            <br>
+            <br>
+            <br>
+            <br>
+            <%= link_to button_tag("View My Events", class: "btn btn-primary", id: "button_view"),'/events/myeventsView/1' %>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-8" id="modDiv1">
+        <div class="">
+          <h1>Welcome to Events Section</h1>
+
+          <p></p>
+
+        </div>
+      </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="push">
+
+</div>
+</body>
+
+
+<%= render 'footer' %>
+</html>

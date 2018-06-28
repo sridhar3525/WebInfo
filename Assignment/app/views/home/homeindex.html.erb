@@ -1,0 +1,132 @@
+<html>
+  <head>
+        <title>
+
+        </title>
+        <link rel="stylesheet" href="bootstrap.css">
+        <style>
+          body{
+            margin: 0px;
+          }
+          .banner-area {
+            background: url(<%= asset_path 'bgImg/bluebg.jpg' %>) no-repeat center center/cover;
+          }
+          .relative{
+            position: relative;
+          }
+          .banner-area .overlay-bg {
+            opacity: .3;
+            background-color: #7f3f3b;
+
+          }
+          .overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+          }
+            #login_button{
+              font-size: 40px;
+            }
+            #signup_button{
+              font-size: 40px;
+              margin-top: 13px;
+              margin-right: 160px;
+              float: right;
+              right: -10px;
+
+            }
+
+          .cover_slider .cover_item {
+            width: 100%;
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            padding: 150px 0;
+            background-position: center center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+          }
+        </style>
+        <script type="text/javascript">
+            function call() {
+                alert("Success CAll");
+                console.log("Button click")
+
+            }
+            function login() {
+                alert("login called")
+                $('#exampleModal').modal('hide');
+                $.ajax({url:"home/index",type:"GET"});
+            }
+        </script>
+  </head>
+  <body>
+
+        <div class="cover_item"_>
+          <section class="banner-area relative" id="home">
+            <div class="overlay overlay-bg"></div>
+            <div class="container">
+              <div class="row fullscreen align-items-center justify-content-center" style="height: 915px;">
+                <div class="banner-content col-lg-10 col-md-12" style="color: floralwhite">
+                  <h1>
+                    Login to Continue! New User? Signup!
+                  </h1>
+                  <button type="button" id="login_button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Login
+                  </button>
+
+                  <%= link_to button_tag("SignUp", class: "btn btn-primary", id: "signup_button"),'/user_details/new' %>
+
+                  <div class="row clock_sec d-flex flex-row justify-content-between" id="clockdiv">
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+<!--          Modal content-->
+          <!-- Button trigger modal -->
+
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Enter Login Credentials</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+               <%= form_tag('/home/login', method: "post")  do%>
+
+                <div class="modal-body">
+
+
+                  <table>
+                    <tr>
+                      <td><%= label_tag :username %></td>
+                      <td><%= text_field_tag :username%></td>
+                    </tr>
+                    <tr>
+                      <td><%= label_tag :password %>
+                      <td><%= password_field_tag :password %> </td>
+                    </tr>
+                  </table>
+
+                </div>
+                <div class="modal-footer">
+                  <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancel" />
+                  <%= submit_tag "Login", class: "btn btn-primary" %>
+                 </div>
+           <% end %>
+              </div>
+            </div>
+          </div>
+
+  </body>
+</html>

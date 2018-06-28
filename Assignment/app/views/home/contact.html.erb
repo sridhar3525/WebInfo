@@ -1,0 +1,100 @@
+<html>
+<head>
+  <title></title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <%= stylesheet_link_tag "/HomeCSS/bootstrap.css" %>
+  <style>
+    a#contact{
+      background-color: deepskyblue;
+      color:darkblue;
+    }
+    #midDiv{
+      left: 0px;
+      float: left;
+      position: absolute;
+      height: auto;
+    }
+
+    .container#mainHead {
+      background-color: steelblue;
+      margin: 0px;
+      width: 100%;
+      max-width: 100%;
+      color: floralwhite;
+    }
+  </style>
+  <script>
+    function contact() {
+          alert('Success Submission');
+        document.getElementById("myForm").reset();
+
+    }
+  </script>
+</head>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+<body>
+
+<div class="container" id="mainHead" >
+  <div class="row">
+    <div class="col-sm-7" id="title_page"> <h1>Contact page</h1></div>
+    <div class="col-sm-5">  <%= render 'mainheader' %> </div>
+  </div>
+</div>
+<%= render 'header' %>
+<div class="container" id="midDiv">
+  <div class="row">
+    <div class="col-sm-2" style="background-image:url(<%= asset_path 'bgImg/background3.jpg' %>);height: 100vh">
+      <div class="overlay" style="align-content: center">
+        <div style="padding-top: 100px">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-md-offset-3" style="padding-top: 40px;">
+    <div class="well well-sm">
+      <form class="form-horizontal" action="#" method="post" id="myForm">
+        <fieldset>
+          <legend class="text-center">Contact us</legend>
+
+          <!-- Name input-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="name">Name</label>
+            <div class="col-md-9">
+              <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
+            </div>
+          </div>
+
+          <!-- Email input-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="email">Your E-mail</label>
+            <div class="col-md-9">
+              <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
+            </div>
+          </div>
+
+          <!-- Message body -->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="message">Your message</label>
+            <div class="col-md-9">
+              <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
+            </div>
+          </div>
+
+          <!-- Form actions -->
+          <div class="form-group">
+            <div class="col-md-12 text-right">
+              <button type="submit" class="btn btn-primary btn-lg" onclick="contact()">Submit</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  </div>
+</div>
+<%= render 'footer' %>
+</body>
+</html>
